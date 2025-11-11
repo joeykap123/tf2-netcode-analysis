@@ -19,6 +19,25 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 > This repository is strictly for **research and educational purposes**. It **does not** interact with Steam, the Team Fortress 2 client, or live servers, and it must **not** be used to create or distribute cheats or exploits. Running or adapting code in this repo against live game clients or servers may violate Valve's Steam Subscriber Agreement, VAC policies, and applicable laws.
 
 
+# Overview of Lag Compensation
+
+# Overview of Interpolation
+
+
+# Associated Files
+
+## Overview of data.json
+**data.json** contains JSON style data that can be parsed and given to various mathematical functions to understand lag compensation and interpolation. 
+
+> !NOTE
+>
+> All datasets in this project are **made-up, synthetic examples** created for testing and visualization.  
+> No real network traffic or gameplay data was collected.
+
+## Overview of math.cs
+**math.cs** seeks to provide methods to analyze network latency, packet loss, and other factors are used in Team Fortress 2. 
+
+
 
 Interpolation/Extrapolation Issues </br>
 UDP Based Cheat Issues </br>
