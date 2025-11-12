@@ -7,5 +7,7 @@
 <br>
 [Florida State University - Interpolation Article] (https://web1.eng.famu.fsu.edu/~dommelen/courses/eml3100/aids/intpol/index.html)
 </br>
+[University of Illinois Urbana Champaign - Interpolation Article] (https://cs418.cs.illinois.edu/website/text/lerp.html)
+</br>
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
