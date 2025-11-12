@@ -12,6 +12,8 @@ Author : Joey Kaplan
 
 ## 4. What is Lag Compensation and Why is it Important?
 
+Lag compensation is "using a snapshot from a previous players position to balance latency issues". This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
+
 ---
 ## 5. What is Interpolation and Why is it Important?
 
