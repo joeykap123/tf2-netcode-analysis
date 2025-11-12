@@ -31,14 +31,3 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 ## Overview of math.cs
 **math.cs** seeks to provide methods to analyze network latency, packet loss, and other factors are used in Team Fortress 2. 
 
-
-
-Interpolation/Extrapolation Issues </br>
-UDP Based Cheat Issues </br>
-Network Attacks on Games </br>
-Might want to mention DoS attacks because they relate to UDP </br>
-TF2 Interpolation settings/eploit </br> 
-
-Handle simulation of packet loss and interpolation to avoid creating entire server/client model</br>
-
-Handle lag compensation and interpolation mainly. Can reference interp cheating, but that is not primary goal of project.
