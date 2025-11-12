@@ -58,27 +58,21 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 
 
 ## 7. Simulation Design and Methodology
-      TODO!!!
-      Offline simulation using synthetic data:
 
-    Players represented as simple objects with position vectors.
-
-    Network conditions: latency, jitter, packet loss.
+To create the simulation for this project, we must go through various steps:</br>
+1. Generate a JSON file of Player objects to parse.
+    1. Players are represented as objects with position vectors. 
+    2. Position vectors will be 3-dimensional
+2. Simulate various network conditions including latency, jitter, and packet losst
+3. Apply interpolation and lag compensation algorithms to synthetic positions to predict next position.
+4. Compare algorithm results with expected results and predict if the player is cheating or simply suffering packet loss.
     
-    Interpolation and lag compensation algorithms applied to synthetic positions.
-    
-    No live data or TF2 servers are accessed.
-    
-    Optional Subsections:
-    
-    Data generation (data/data.json)
-    
-    Network event simulation
-    
-    Visualization approach (e.g., matplotlib or C# plotting libraries)
     
 
 ## 8. Results and Observations
+
+Let us analyze our results of this project:
+
     TODO!!!
     Compare simulated “real” vs “interpolated” positions.
     
@@ -93,9 +87,12 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
     Discuss parameter effects (interpolation delay, buffer size).
 
 ## 9. Discussion
+
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
     Reinforce that the project is analysis-only.
+    
+    
 
 ## 10. Limitations
 - No physics engine
@@ -103,16 +100,23 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 - Limited tick rates
 - Synthetic data only
 
-
 ## 11. Ethical and Educational Context
+
 
 ## 12. Conclusion
 
 ## 13. References
+See **References.md** for all references.
 
 
 ### Appendix A: Interpolation Formulas
     TODO!!!
+
+Linear Interpolation:
+
+Cubic Interpolation:
+
+Spline Interpolation:
 
 ### Appendix B - Simulation Parameters
 
