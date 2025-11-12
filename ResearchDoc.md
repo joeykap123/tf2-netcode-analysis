@@ -15,18 +15,25 @@ Author : Joey Kaplan
 ---
 ## 5. What is Interpolation and Why is it Important?
 
+
+
 Notable interpolation strategies include Linear Interpolation, Cubic Interpolation, and Nearest-Neighbor Interpolation. We will explore these interpolation strategies and hypothesize which method TF2 uses. 
 
 ### Linear Interpolation
 
 Linear Interpolation can be defined with the following formula:
 </br>
-    $d = d_1 + \frac{g - g_1}{g_2 - g_1}(d_2 - d_1)$. 
+    $lerp(\vec{a},\vec{b},t) = (x_1 + (x_2 - x_1)\times t, y_1 + (y_2 - y_1) \times t, z_1 + (z_2 - z_1) \times t)$.
+    </br>
+    $\vec{a} =$ Starting Position
+    </br>
+    $\vec{b} =$ Ending Position
+    </br>
+    $t =$ Interpolation Factor
 </br>
     
-Let us perform an example to further understand this formula. (EXAMPLE HERE LATER)
-
 ### Cubic Interpolation
+(Spline?) 
 
 ### Nearest-Neighbor Interpolation
 
