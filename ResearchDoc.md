@@ -20,12 +20,17 @@ Lag compensation is "using a snapshot from a previous players position to balanc
 Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a players next position based on prior data.
 </br>
 Notable interpolation strategies include Linear Interpolation, Cubic Interpolation, and Nearest-Neighbor Interpolation. We will explore these interpolation strategies and hypothesize which method TF2 uses. 
+</br></br>
+Let us define a players position as:</br>
+$P(t) = [x(t), y(t), z(t)]$
+</br>
+Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector.
 
 ### Linear Interpolation
 
 Linear Interpolation can be defined with the following formula:
 </br>
-    $lerp(\vec{a},\vec{b},t) = (x_1 + (x_2 - x_1)\times t, y_1 + (y_2 - y_1) \times t, z_1 + (z_2 - z_1) \times t)$.
+    $lerp(P) = P(t) = (1-t)P_0 + tP_1$.
     </br>
     $\vec{a} =$ Starting Position
     </br>
