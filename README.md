@@ -42,6 +42,7 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 Interpolation/Extrapolation Issues </br>
 UDP Based Cheat Issues </br>
 Network Attacks on Games </br>
+Might want to mention DoS attacks because they relate to UDP </br>
 TF2 Interpolation settings/eploit </br> 
 
 Handle simulation of packet loss and interpolation to avoid creating entire server/client model</br>
