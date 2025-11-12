@@ -1,4 +1,4 @@
-### An Analysis of Networking Principles in Team Fortress 2
+## An Analysis of Networking Principles in Team Fortress 2
 
 ```
 Author : Joey Kaplan
@@ -12,9 +12,43 @@ Author : Joey Kaplan
 
 ## 4. What is Lag Compensation and Why is it Important?
 
+---
 ## 5. What is Interpolation and Why is it Important?
 
-## 6. Simulation Design and Methodology
+Notable interpolation strategies include Linear Interpolation, Cubic Interpolation, and Nearest-Neighbor Interpolation. We will explore these interpolation strategies and hypothesize which method TF2 uses. 
+
+### Linear Interpolation
+
+Linear Interpolation can be defined with the following formula:
+</br>
+    $d = d_1 + \frac{g - g_1}{g_2 - g_1}(d_2 - d_1)$. 
+</br>
+    
+Let us perform an example to further understand this formula. (EXAMPLE HERE LATER)
+
+### Cubic Interpolation
+
+### Nearest-Neighbor Interpolation
+
+---
+
+## 6. Problems with Usage of UDP and Lag Compensation/Interpolation
+However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
+
+Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
+Beyond TF2's specific commands, cheating in online servers is popular and hard to catch. This is due to the nature of UDP; This protocol is built for speed, making packet loss inevitable. Knowing this, cheaters can use strategies such as modification of interpolation to simulate innocent packet loss, leading to difficulty in telling cheaters apart from players with poor connection. 
+</br>
+
+Additionally, topics such as Denial of Service (DoS) attacks can be executed on these servers with little difficulty and little risk of being caught. Since DoS attacks leverage sending many requests to a server in a short time period, servers using UDP are at specific risk. Since UDP does not require a three-way handshake to establish connection like TCP, an attacker can easily overwhelm UDP servers. 
+</br>
+
+IP Spoofing can also be easily executed over UDP connections. Since UDP has no way to verify identity, attackers can send requests to the server using the victims IP, leading to large amounts of data being sent to the victims system.
+</br>
+
+It should be noted that DoS attacks are not as malicious in nature when implemented on gaming servers, as often, they are a means to make the attacker win or gain an upperhand.
+
+
+## 7. Simulation Design and Methodology
       TODO!!!
       Offline simulation using synthetic data:
 
@@ -35,7 +69,7 @@ Author : Joey Kaplan
     Visualization approach (e.g., matplotlib or C# plotting libraries)
     
 
-## 7. Results and Observations
+## 8. Results and Observations
     TODO!!!
     Compare simulated “real” vs “interpolated” positions.
     
@@ -49,29 +83,29 @@ Author : Joey Kaplan
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 8. Discussion
+## 9. Discussion
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
     Reinforce that the project is analysis-only.
 
-## 9. Limitations
+## 10. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
 
-## 10. Ethical and Educational Context
+## 11. Ethical and Educational Context
 
-## Conclusion
+## 12. Conclusion
 
-## References
+## 13. References
 
 
-## Appendix A: Interpolation Formulas
+### Appendix A: Interpolation Formulas
     TODO!!!
 
-## Appendix B - Simulation Parameters
+### Appendix B - Simulation Parameters
 
 | Parameter                 | Value       | Description                                 |
 |---------------------------|-------------|---------------------------------------------|
