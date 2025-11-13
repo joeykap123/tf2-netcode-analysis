@@ -12,6 +12,7 @@ struct Player
     std::vector<Position> serverPositionList;
     Position playerPos;
     Position serverPos;
+    NetworkCondition net;
 };
 
 string getPlayerName(const Player& playr);
