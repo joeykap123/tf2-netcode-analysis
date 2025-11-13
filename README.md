@@ -20,6 +20,10 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 >
 > This repository is strictly for **research and educational purposes**. It **does not** interact with Steam, the Team Fortress 2 client, or live servers, and it must **not** be used to create or distribute cheats or exploits. Running or adapting code in this repo against live game clients or servers may violate Valve's Steam Subscriber Agreement, VAC policies, and applicable laws.
 
+
+# Installation
+    TODO::::
+
 # Associated Files
 - data.json
 - math.cs
@@ -46,3 +50,6 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 
 ## Overview of References.md
 **References.md** holds all links to websites referenced during the creation of this project. 
+
+# License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
