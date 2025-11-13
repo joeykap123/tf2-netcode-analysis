@@ -1,5 +1,9 @@
 ```
 Author: Joey Kaplan
+Date Createed: November 10, 2025
+Date Last Modified: November 12, 2025
+Asssociated Repository:
+Copyright:
 ```
 
 # Overview
@@ -19,6 +23,9 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 # Associated Files
 - data.json
 - math.cs
+- Disclaimer.md
+- ResearchDoc.md
+- References.md
 
 ## Overview of data.json
 **data.json** contains JSON style data that can be parsed and given to various mathematical functions to understand lag compensation and interpolation. 
@@ -31,3 +38,11 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 ## Overview of math.cs
 **math.cs** seeks to provide methods to analyze network latency, packet loss, and other factors are used in Team Fortress 2. 
 
+## Overview of Disclaimer.md
+**Disclaimer.md** seeks to explain that this project does not promote cheating or modification of game files. This document states that this project is purely for research and educational purposes.
+
+## Overview of ResearchDoc.md
+**ResearchDoc.md** holds all research and explanations of this project. This document provides information about Team Fortress 2, network protocols, mathematic topics used, and conclusions about this project.
+
+## Overview of References.md
+**References.md** holds all links to websites referenced during the creation of this project. 
