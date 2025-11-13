@@ -8,10 +8,17 @@
 struct Player 
 {
     std::string username;
+    double velocity;
+
+    // Client Side Components
     std::vector<Position> playerPositionList;
-    std::vector<Position> serverPositionList;
     Position playerPos;
+
+    // Server Side Components
+    std::vector<Position> serverPositionList;
     Position serverPos;
+    
+    // Network Condition Components
     NetworkCondition net;
 };
 
@@ -26,8 +33,5 @@ vector getPlayerPositionList(const Player& playr);
 void updatePlayerPositionList(Player& playr, const Position& newPos);
 
 void updateServerPositionList(Player& playr, const Position& newPos);
-
-// Need to implement Player latency, etc.
-
 
 #endif player_h
