@@ -1,4 +1,7 @@
 # References
+</br>
+[Valve Source SDK 2013 GitHub] (https://github.com/ValveSoftware/source-sdk-2013)
+</br>
 [IEEE Article] (https://ieeexplore.ieee.org/document/9531618)
 </br>
 [NIPES Article] (https://journals.nipes.org/index.php/jete/article/download/507/518/567)
