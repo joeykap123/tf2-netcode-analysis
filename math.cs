@@ -75,6 +75,17 @@ using System.Collections.Generic;
         }
 
 
+        public static Position LinearInterp()
+        {
+            
+        }
+
+        public static Position CubicHermiteInterp()
+        {
+            
+        }
+
+        
     }
     
     
