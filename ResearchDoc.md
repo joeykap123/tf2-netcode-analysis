@@ -92,7 +92,7 @@ $P(t) = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1} + (
 Therefore, we can compute our remaining terms: </br>
 $P(t) = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1} = (2(0.125) - 3(0.25) + 1)\vec{P_0} + (-2(0.125) + 3(0.25))\vec{P_1} = (0.25 - 0.75 + 1)\vec{P_0} + (-0.25 + 0.75)\vec{P_1} = 0.5\vec{P_0} + 0.5\vec{P_1}$</br>
 Thus, we can move onto our final step and substitue $\vec{P_0}$ and $\vec{P_1}$:</br>
-$P(t) = 0.5\vec{P_0} + 0.5\vec{P_1} = 0.5[10,20,1] + 0.5[13,23,0] = [11.5, 21.5, 0.5]</br></br>
+$P(t) = 0.5\vec{P_0} + 0.5\vec{P_1} = 0.5[10,20,1] + 0.5[13,23,0] = [11.5, 21.5, 0.5]$</br></br>
 
 Therefore, we predict via cubic (Hermite) interpolation that the players position at 0.5 seconds will be $[11.5,21.5,0.5]$
 </br>
@@ -101,9 +101,10 @@ Cubic Interpolation is often used due to its ability to provide smoother player 
 ---
 
 ### Cubic Spline Interpolation
+        TODO::::
 
 ### Nearest-Neighbor Interpolation
-
+        TODO::::
 ---
 
 ## 6. Problems with Usage of UDP and Lag Compensation/Interpolation
@@ -168,21 +169,21 @@ Let us analyze our results of this project:
 - Synthetic data only
 
 ## 11. Ethical and Educational Context
-
+Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
 
 ## 12. Conclusion
+
 
 ## 13. References
 See **References.md** for all references.
 
-
 ### Appendix A: Interpolation Formulas
     TODO!!!
 
-Linear Interpolation:
-
-Cubic Interpolation:
-
+Linear Interpolation:  $lerp(P) = P(t) = (1-\alpha)\vec{a} + \alpha\vec{b}$.
+</br>
+Cubic Interpolation:   $P(t) = (2s^3 - 3s^2 + 1)\vec{P_0} + (-2s^3 + 3s^2)\vec{P_1} + (s^3 - 2s^2 + s)\vec{M_0} + (s^3 - s^2)\vec{M_1}$
+</br>
 Spline Interpolation:
 
 ### Appendix B - Simulation Parameters
