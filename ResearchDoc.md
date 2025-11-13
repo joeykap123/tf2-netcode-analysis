@@ -107,6 +107,8 @@ IP Spoofing can also be easily executed over UDP connections. Since UDP has no w
 
 It should be noted that DoS attacks are not as malicious in nature when implemented on gaming servers, as often, they are a means to make the attacker win or gain an upperhand.
 
+> !NOTE
+> Do not cheat or use this project as inspiration for cheating.
 
 ## 7. Simulation Design and Methodology
 
