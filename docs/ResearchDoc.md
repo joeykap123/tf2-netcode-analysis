@@ -107,7 +107,13 @@ Cubic Interpolation is often used due to its ability to provide smoother player 
         TODO::::
 ---
 
-## 6. Problems with Usage of UDP and Lag Compensation/Interpolation
+## 6. What is Extrapolation and Do We Need to Use It
+Extrapolation is a concept similar to interpolation, but an important concept nontheless. Extrapolation allows us to "predict" the next position of an object based on the trend of previous points.
+
+---
+
+
+## 7. Problems with Usage of UDP and Lag Compensation/Interpolation
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
@@ -125,7 +131,7 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 > !NOTE
 > Do not cheat or use this project as inspiration for cheating.
 
-## 7. Simulation Design and Methodology
+## 8. Simulation Design and Methodology
 
 To create the simulation for this project, we must go through various steps:</br>
 1. Generate a JSON file of Player objects to parse.
@@ -137,7 +143,7 @@ To create the simulation for this project, we must go through various steps:</br
     
     
 
-## 8. Results and Observations
+## 9. Results and Observations
 
 Let us analyze our results of this project:
 
@@ -154,7 +160,7 @@ Let us analyze our results of this project:
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 9. Discussion
+## 10. Discussion
 
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
@@ -162,19 +168,19 @@ Let us analyze our results of this project:
     
     
 
-## 10. Limitations
+## 11. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
-## 11. Ethical and Educational Context
+## 12. Ethical and Educational Context
 Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
 
-## 12. Conclusion
+## 13. Conclusion
 
 
-## 13. References
+## 14. References
 See **References.md** for all references.
 
 ### Appendix A: Interpolation Formulas
