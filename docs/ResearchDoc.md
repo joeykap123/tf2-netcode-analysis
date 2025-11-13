@@ -10,11 +10,30 @@ Team Fortress 2 is a multiplayer first person shooter game created by Valve in 2
 </br>
 Team Fortress 2 is often notated by the informal name, **TF2**, and as such I will refer to the game by this name within this document.
 
-## 2. Overview of Team Fortress 2 (TF2) Networking
+
+## 2. Table of Contents
+- [Introduction](#1-introduction)
+- [Overview of TF2](#3-overview-of-team-fortress-2-tf2-networking)
+- [About UDP](#4-why-is-user-datagram-protocol-udp-used-and-its-trade-offs)
+- [About Lag Compensation](#5-what-is-lag-compensation-and-why-is-it-important)
+- [About Interpolation](#6-what-is-interpolation-and-why-is-it-important)
+- [About Extrapolation](#7-what-is-extrapolation-and-why-is-it-important)
+- [Problems Associated with UDP](#8-problems-with-usage-of-udp-and-lag-compensationinterpolation)
+- [Simulation Design and Methodology](#9-simulation-design-and-methodology)
+- [Results and Obvservations](#10-results-and-observations)
+- [Discussion](#11-discussion)
+- [Limitations](#12-limitations)
+- [Ethical and Educational Context](#13-ethical-and-educational-context)
+- [Conclusion](#14-conclusion)
+- [References](#15-references)
+- [Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
+- [Appendix B: Simulation Parameters](#appendix-b-simulation-parameters)
+
+## 3. Overview of Team Fortress 2 (TF2) Networking
 
 While details of Valve's exact networking infrastructure remain unknown, we can assume Steam uses User Diagram Protocol (UDP) to run its servers for various games.
 
-## 3. Why is User Diagram Protocol (UDP) Used and Its Trade-Offs
+## 4. Why is User Datagram Protocol (UDP) Used and Its Trade-Offs
 Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
 </br>
 A major benefit of using UDP is the protocols speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
@@ -24,12 +43,12 @@ So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Usi
 While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over (Transmission Control Protocl) TCP. Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
 
 
-## 4. What is Lag Compensation and Why is it Important?
+## 5. What is Lag Compensation and Why is it Important?
 
 Lag compensation is "using a snapshot from a previous players position to balance latency issues". This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
 
 ---
-## 5. What is Interpolation and Why is it Important?
+## 6. What is Interpolation and Why is it Important?
 
 Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a players next position based on prior data.
 </br>
@@ -40,6 +59,7 @@ $P(t) = [x(t), y(t), z(t)]$
 </br>
 Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector.
 
+[Go to Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 ---
 ### Linear Interpolation
 
@@ -107,13 +127,13 @@ Cubic Interpolation is often used due to its ability to provide smoother player 
         TODO::::
 ---
 
-## 6. What is Extrapolation and Do We Need to Use It
+## 7. What is Extrapolation and Why is it Important?
 Extrapolation is a concept similar to interpolation, but an important concept nontheless. Extrapolation allows us to "predict" the next position of an object based on the trend of previous points.
 
 ---
 
 
-## 7. Problems with Usage of UDP and Lag Compensation/Interpolation
+## 8. Problems with Usage of UDP and Lag Compensation/Interpolation
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
@@ -131,7 +151,7 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 > !NOTE
 > Do not cheat or use this project as inspiration for cheating.
 
-## 8. Simulation Design and Methodology
+## 9. Simulation Design and Methodology
 
 To create the simulation for this project, we must go through various steps:</br>
 1. Generate a JSON file of Player objects to parse.
@@ -143,7 +163,7 @@ To create the simulation for this project, we must go through various steps:</br
     
     
 
-## 9. Results and Observations
+## 10. Results and Observations
 
 Let us analyze our results of this project:
 
@@ -160,7 +180,7 @@ Let us analyze our results of this project:
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 10. Discussion
+## 11. Discussion
 
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
@@ -168,19 +188,19 @@ Let us analyze our results of this project:
     
     
 
-## 11. Limitations
+## 12. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
-## 12. Ethical and Educational Context
+## 13. Ethical and Educational Context
 Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
 
-## 13. Conclusion
+## 14. Conclusion
 
 
-## 14. References
+## 15. References
 See **References.md** for all references.
 
 ### Appendix A: Interpolation Formulas
@@ -191,8 +211,11 @@ Linear Interpolation:  $lerp(P) = P(t) = (1-\alpha)\vec{a} + \alpha\vec{b}$.
 Cubic Interpolation:   $P(t) = (2s^3 - 3s^2 + 1)\vec{P_0} + (-2s^3 + 3s^2)\vec{P_1} + (s^3 - 2s^2 + s)\vec{M_0} + (s^3 - s^2)\vec{M_1}$
 </br>
 Spline Interpolation:
+</br>
+[Back to Section 6: What is Interpolation and Why is it Important](#6-what-is-interpolation-and-why-is-it-important)
 
-### Appendix B - Simulation Parameters
+
+### Appendix B: Simulation Parameters
 
 | Parameter                 | Value       | Description                                 |
 |---------------------------|-------------|---------------------------------------------|
