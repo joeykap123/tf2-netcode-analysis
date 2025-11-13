@@ -6,9 +6,23 @@ Author : Joey Kaplan
 
 ## 1. Introduction
 
+Team Fortress 2 is a multiplayer first person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fanbase, and still receives updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
+</br>
+Team Fortress 2 is often notated by the informal name, **TF2**, and as such I will refer to the game by this name within this document.
+
 ## 2. Overview of Team Fortress 2 (TF2) Networking
 
-## 3. Why is UDP Used and Its Trade-Offs
+While details of Valve's exact networking infrastructure remain unknown, we can assume Steam uses User Diagram Protocol (UDP) to run its servers for various games.
+
+## 3. Why is User Diagram Protocol (UDP) Used and Its Trade-Offs
+Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
+</br>
+A major benefit of using UDP is the protocols speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
+</br>
+So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Using UDP allows applications to send data faster, consume less overhead, and implemented in a straightfoward fashion. 
+</br>
+While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over (Transmission Control Protocl) TCP. Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
+
 
 ## 4. What is Lag Compensation and Why is it Important?
 
