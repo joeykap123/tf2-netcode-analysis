@@ -55,12 +55,6 @@ NetworkingInVideoGames/
 │   └── Disclaimer.md           # Legal and ethical disclaimer
 └── LICENSE                     # MIT License
 ```
-- data.json
-- math.cs
-- Disclaimer.md
-- ResearchDoc.md
-- References.md
-
 ---
 
 # data Folder
