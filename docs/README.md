@@ -32,7 +32,29 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 # Installation
     TODO::::
 
-# Associated Files
+# Project Structure
+```
+NetworkingInVideoGames/
+├── src/
+│   ├── Player.h                # Defines the Player class
+│   ├── Player.cpp              # Implements Player methods
+│   ├── Position.h              # Defines the Position class
+│   ├── Position.cpp            # Implements Position methods
+│   ├── Interpolation.h         # Defines the Interpolation class
+│   ├── Interpolation.cpp       # Implements Interpolation methods
+│   ├── NetworkCondition.h      # Defines the NetworkCondition class
+│   └── NetworkCondition.cpp    # Implements the NetworkCondition class
+|
+├── data/
+|   └── data.json                # JSON data file
+|
+├── docs/
+│   ├── README.md               # Project README
+│   ├── ResearchDoc.md          # Research notes and analysis
+│   ├── References.md           # External references and sources
+│   └── Disclaimer.md           # Legal and ethical disclaimer
+└── LICENSE                     # MIT License
+```
 - data.json
 - math.cs
 - Disclaimer.md
