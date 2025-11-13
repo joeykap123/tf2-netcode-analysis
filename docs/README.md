@@ -1,10 +1,10 @@
-```
-Author: Joey Kaplan
-Date Createed: November 10, 2025
-Date Last Modified: November 12, 2025
-Asssociated Repository:
-Copyright:
-```
+# Networking in Video Games: An Exploration of Networking Principles in Team Fortress 2
+
+**Author:** Joey Kaplan  
+**Date Created:** November 10, 2025  
+**Last Modified:** November 12, 2025  
+**Repository:** 
+**Copyright:** © 2025 Joey Kaplan  
 
 # Overview
 This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.</br>
@@ -20,6 +20,14 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 >
 > This repository is strictly for **research and educational purposes**. It **does not** interact with Steam, the Team Fortress 2 client, or live servers, and it must **not** be used to create or distribute cheats or exploits. Running or adapting code in this repo against live game clients or servers may violate Valve's Steam Subscriber Agreement, VAC policies, and applicable laws.
 
+## Table of Contents
+- [Overview](#overview)
+- [Installation](#installation)
+- [Project Structure](#associated-files)
+- [Data Folder](#data-folder)
+- [Source Folder](#src-folder)
+- [Docs Folder](#docs-folder)
+- [License](#license)
 
 # Installation
     TODO::::
@@ -31,6 +39,10 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 - ResearchDoc.md
 - References.md
 
+---
+
+# data Folder
+
 ## Overview of data.json
 **data.json** contains JSON style data that can be parsed and given to various mathematical functions to understand lag compensation and interpolation. 
 
@@ -39,8 +51,36 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 > All datasets in this project are **made-up, synthetic examples** created for testing and visualization.  
 > No real network traffic or gameplay data was collected.
 
-## Overview of math.cs
-**math.cs** seeks to provide methods to analyze network latency, packet loss, and other factors are used in Team Fortress 2. 
+---
+
+# src Folder
+
+## Overview of Player.h
+
+
+## Overview of Player.cpp
+
+## Overview of Position.h
+
+
+## Overview of Position.cpp
+
+
+## Overview of Interpolation.h
+
+
+## Overview of Interpolation.cpp
+
+
+## Overview of NetworkCondition.h
+
+
+## Overview of NetworkCondition.cpp
+
+
+---
+
+# docs Folder
 
 ## Overview of Disclaimer.md
 **Disclaimer.md** seeks to explain that this project does not promote cheating or modification of game files. This document states that this project is purely for research and educational purposes.
@@ -51,5 +91,9 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 ## Overview of References.md
 **References.md** holds all links to websites referenced during the creation of this project. 
 
+---
+
+
 # License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+© 2025 Joey Kaplan. All rights reserved except as permitted under the MIT License.
