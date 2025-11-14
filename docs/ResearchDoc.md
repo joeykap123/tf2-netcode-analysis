@@ -13,7 +13,7 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 
 ## 2. Table of Contents
 - [Introduction](#1-introduction)
-- [Overview of TF2](#3-overview-of-team-fortress-2-tf2-networking)
+- [Expected Learning Outcomes](#3-expected-learning-outcomes)
 - [About UDP](#4-why-is-user-datagram-protocol-udp-used-and-its-trade-offs)
 - [About Lag Compensation](#5-what-is-lag-compensation-and-why-is-it-important)
 - [About Interpolation](#6-what-is-interpolation-and-why-is-it-important)
@@ -29,9 +29,8 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 - [Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 - [Appendix B: Simulation Parameters](#appendix-b-simulation-parameters)
 
-## 3. Overview of Team Fortress 2 (TF2) Networking
 
-While details of Valve's exact networking infrastructure remain unknown, we can assume Steam uses User Diagram Protocol (UDP) to run its servers for various games.
+# 3. Expected Learning Outcome
 
 ## 4. Why is User Datagram Protocol (UDP) Used and Its Trade-Offs
 Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
