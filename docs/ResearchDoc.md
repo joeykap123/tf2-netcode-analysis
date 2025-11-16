@@ -56,7 +56,7 @@ Notable interpolation strategies include Linear Interpolation, Cubic Interpolati
 Let us define a players position as:</br>
 $P(t) = [x(t), y(t), z(t)]$
 </br>
-Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector.
+Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector at a given time.
 
 [Go to Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 ---
@@ -120,7 +120,11 @@ Cubic Interpolation is often used due to its ability to provide smoother player 
 ---
 
 ### Cubic Spline Interpolation
-        TODO::::
+
+Cubic Spline interpolation can be defined with the following formula:
+</br>
+$S_i(x) = a_{i}x^3 + b_{i}x^2 + c_{i}x + d_{i}$
+</br>
 
 ### Nearest-Neighbor Interpolation
         TODO::::
