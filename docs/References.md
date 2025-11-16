@@ -12,5 +12,7 @@
 </br>
 [University of Illinois Urbana Champaign - Interpolation Article] (https://cs418.cs.illinois.edu/website/text/lerp.html)
 </br>
+[Berkley Python Programming and Numerical Methods](https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter17.03-Cubic-Spline-Interpolation.html)
+</br>
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
