@@ -4,6 +4,13 @@
 Author : Joey Kaplan
 ```
 
+TODO:
+- Fix numbering in TOC
+- Add missing networking concepts: TCP vs UDP, packet loss, time synchronization
+- Add TF2-specific examples for lag compensation
+- Proofread results and discussion sections
+
+
 ## 1. Introduction
 
 Team Fortress 2 is a multiplayer first person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fanbase, and still receives updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
@@ -14,7 +21,7 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 ## 2. Table of Contents
 - [Introduction](#1-introduction)
 - [Expected Learning Outcomes](#3-expected-learning-outcome)
-- [About UDP](#4-why-is-user-datagram-protocol-udp-used-and-its-trade-offs)
+- [About UDP](#4-user-datagram-protocol-in-multiplayer-games-benefitsand-tradeoffs)
 - [About Lag Compensation](#5-what-is-lag-compensation-and-why-is-it-important)
 - [About Interpolation](#6-what-is-interpolation-and-why-is-it-important)
 - [About Extrapolation](#7-what-is-extrapolation-and-why-is-it-important)
@@ -32,24 +39,28 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 
 
 ## 3. Expected Learning Outcome
+This project seeks to provide readers with a thorough understanding of networking principles associated with TF2.
 
-
-## 4. Why is User Datagram Protocol (UDP) Used and Its Trade-Offs
+## 4. User Datagram Protocol in Multiplayer Games: Benefits and Trade-Offs
 Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
 </br>
 A major benefit of using UDP is the protocols speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
 </br>
 So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Using UDP allows applications to send data faster, consume less overhead, and implemented in a straightfoward fashion. 
 </br>
-While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over (Transmission Control Protocl) TCP. Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
+While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over (Transmission Control Protocol) TCP. Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
 
 
-## 5. What is Lag Compensation and Why is it Important?
+## 5. Packet Loss and Reliability
+
+## 6. Latency vs Bandwidth vs Throughput
+
+## 5. Lag Compensation Techniques in Multiplayer Networking
 
 Lag compensation is "using a snapshot from a previous players position to balance latency issues". This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
 
 ---
-## 6. What is Interpolation and Why is it Important?
+## 6. Interpolation Methods for Networked Player Movement
 
 Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a players next position based on prior data.
 </br>
@@ -137,12 +148,39 @@ Extrapolation is a concept similar to interpolation, but an important concept no
 
 ---
 
-## 8. TF2 Specific Latency Dynamics
+## 8. Event & State Synchronization and Consistency in TF2
+
+
+---
+
+
+## 9. Client Prediction
+
+---
+
+## 9. Tick-Rate and Jitter Handling
+
+---
+
+## 9. Latency Dynamics in TF2
 TF2 has cl_interp (TODO)
 
 ---
 
-## 9. Problems with Usage of UDP and Lag Compensation/Interpolation
+## 10. Server Architectures: Iterative vs Concurrent Processing
+
+
+---
+
+
+## 11.Time Synchronization / Clock Drift
+Different client clocks
+
+
+## 12. Quality of Service (QoS) / Network Prioritization
+Go over how client side gameplay is prioritized over cosmetics and items.
+
+## 10. Challenges and Security Implications of UDP Networking
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
@@ -160,7 +198,7 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 > !NOTE
 > Do not cheat or use this project as inspiration for cheating.
 
-## 10. Simulation Design and Methodology
+## 11. Simulation Methodology
 
 To create the simulation for this project, we must go through various steps:</br>
 1. Generate a JSON file of Player objects to parse.
@@ -172,7 +210,7 @@ To create the simulation for this project, we must go through various steps:</br
     
     
 
-## 11. Results and Observations
+## 12. Results and Observations
 
 Let us analyze our results of this project:
 
@@ -189,7 +227,7 @@ Let us analyze our results of this project:
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 12. Discussion
+## 13. Discussion
 
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
@@ -197,24 +235,22 @@ Let us analyze our results of this project:
     
     
 
-## 13. Limitations
+## 14. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
-## 14. Ethical and Educational Context
+## 15. Ethical Considerations
 Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
 
-## 15. Conclusion
+## 16. Conclusion
 
 
-## 16. References
+## 17. References
 See **References.md** for all references.
 
 ### Appendix A: Interpolation Formulas
-    TODO!!!
-
 Linear Interpolation:  $lerp(P) = P(t) = (1-\alpha)\vec{a} + \alpha\vec{b}$.
 </br>
 Cubic Interpolation:   $P(t) = (2s^3 - 3s^2 + 1)\vec{P_0} + (-2s^3 + 3s^2)\vec{P_1} + (s^3 - 2s^2 + s)\vec{M_0} + (s^3 - s^2)\vec{M_1}$
@@ -233,5 +269,3 @@ Spline Interpolation:
 | Packet Loss               | 0-10%       | Randomly simulated loss                     |
 | Latency                   | 50-200 ms   | Round-trip time applied per simulated player|
 | Number of Players         | 5           | Number of simulated entities                |
-
-    TODO!!! NOT YET IMPLEMENTED IN data.json
