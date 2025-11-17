@@ -14,5 +14,7 @@
 </br>
 [Berkley Python Programming and Numerical Methods](https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter17.03-Cubic-Spline-Interpolation.html)
 </br>
+[Source Multiplayer Networking] (https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking)
+</br>
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
