@@ -13,24 +13,26 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 
 ## 2. Table of Contents
 - [Introduction](#1-introduction)
-- [Expected Learning Outcomes](#3-expected-learning-outcomes)
+- [Expected Learning Outcomes](#3-expected-learning-outcome)
 - [About UDP](#4-why-is-user-datagram-protocol-udp-used-and-its-trade-offs)
 - [About Lag Compensation](#5-what-is-lag-compensation-and-why-is-it-important)
 - [About Interpolation](#6-what-is-interpolation-and-why-is-it-important)
 - [About Extrapolation](#7-what-is-extrapolation-and-why-is-it-important)
-- [Problems Associated with UDP](#8-problems-with-usage-of-udp-and-lag-compensationinterpolation)
-- [Simulation Design and Methodology](#9-simulation-design-and-methodology)
-- [Results and Obvservations](#10-results-and-observations)
-- [Discussion](#11-discussion)
-- [Limitations](#12-limitations)
-- [Ethical and Educational Context](#13-ethical-and-educational-context)
-- [Conclusion](#14-conclusion)
-- [References](#15-references)
+- [TF2 Specific Dynamics](#8-tf2-specific-latency-dynamics)
+- [Problems Associated with UDP](#9-problems-with-usage-of-udp-and-lag-compensationinterpolation)
+- [Simulation Design and Methodology](#10-simulation-design-and-methodology)
+- [Results and Obvservations](#11-results-and-observations)
+- [Discussion](#12-discussion)
+- [Limitations](#13-limitations)
+- [Ethical and Educational Context](#14-ethical-and-educational-context)
+- [Conclusion](#15-conclusion)
+- [References](#16-references)
 - [Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 - [Appendix B: Simulation Parameters](#appendix-b-simulation-parameters)
 
 
-# 3. Expected Learning Outcome
+## 3. Expected Learning Outcome
+
 
 ## 4. Why is User Datagram Protocol (UDP) Used and Its Trade-Offs
 Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
@@ -135,8 +137,12 @@ Extrapolation is a concept similar to interpolation, but an important concept no
 
 ---
 
+## 8. TF2 Specific Latency Dynamics
+TF2 has cl_interp (TODO)
 
-## 8. Problems with Usage of UDP and Lag Compensation/Interpolation
+---
+
+## 9. Problems with Usage of UDP and Lag Compensation/Interpolation
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
@@ -154,7 +160,7 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 > !NOTE
 > Do not cheat or use this project as inspiration for cheating.
 
-## 9. Simulation Design and Methodology
+## 10. Simulation Design and Methodology
 
 To create the simulation for this project, we must go through various steps:</br>
 1. Generate a JSON file of Player objects to parse.
@@ -166,7 +172,7 @@ To create the simulation for this project, we must go through various steps:</br
     
     
 
-## 10. Results and Observations
+## 11. Results and Observations
 
 Let us analyze our results of this project:
 
@@ -183,7 +189,7 @@ Let us analyze our results of this project:
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 11. Discussion
+## 12. Discussion
 
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
@@ -191,19 +197,19 @@ Let us analyze our results of this project:
     
     
 
-## 12. Limitations
+## 13. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
-## 13. Ethical and Educational Context
+## 14. Ethical and Educational Context
 Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
 
-## 14. Conclusion
+## 15. Conclusion
 
 
-## 15. References
+## 16. References
 See **References.md** for all references.
 
 ### Appendix A: Interpolation Formulas
