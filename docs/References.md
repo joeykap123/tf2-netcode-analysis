@@ -16,5 +16,7 @@
 </br>
 [Source Multiplayer Networking] (https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking)
 </br>
+[Hartmann, K., Krois, J., Rudolph, A. (2023): Statistics and Geodata Analysis using R (SOGA-R). Department of Earth Sciences, Freie Universitaet Berlin.](https://www.geo.fu-berlin.de/en/v/soga-r/Advances-statistics/Geostatistics/Nearest-Neighbor-Interpolation/index.html)
+</br>
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
