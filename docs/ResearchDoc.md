@@ -151,12 +151,12 @@ Extrapolation is a concept similar to interpolation, but an important concept no
 ## 8. Event & State Synchronization and Consistency in TF2
 What is synchronization (1)
 What is event v state sync (2)
+</br>
+Event-based synchronization relies on signals 
+State-based synchronization relies on some conditional statement
+
 ___ sharing among threads requires sycnhronization. We can avoid the question of machine code atomicity, declaring the need for cache coherence, and 
 
-TODO:
-No-Sharing/
-Transactions/
-Locks/
 
 
 ---
@@ -181,6 +181,10 @@ Servers operate using two common architectures; Iterative and Concurrent. The be
 Iterative servers are relatively more simple, have less overhead, and are cheaper. Additionally, Iterative Server Architecture processes one client connection at a time, ___. Thus, Iterative Servers function well when only one client needs to be processed at a time. For instance, an online chess game or a website for buying tickets. Both of these application need iterative server structure to ensure data arrives based on when a client connected.
 </br>
 Concurrent servers are more complex, have more overhead, and tend to be more expensive. This server architecture can accept multiple clients at the same time, allowing multi-client interactions. This server type is extremely useful for online gaming, large websites with constant traffic, and databases.
+</br>
+
+TODO:: Discuss thread based v process based v event based. Can also put a short paragraph about atomicity, but not too in depth. 
+
 
 ---
 
