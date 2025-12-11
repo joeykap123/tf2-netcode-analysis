@@ -7,7 +7,10 @@
 **Copyright:** © 2025 Joey Kaplan  
 
 # Overview
-This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.</br>
+This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.
+> !NOTE
+> This project is still in progress and has not been completed. I plan on updating this project more after I finish finals for this semester.
+</br>
 
 > !NOTE
 > **Disclaimer**
@@ -23,7 +26,7 @@ This project seeks to analyze various networking principles in Team Fortress 2, 
 ## Table of Contents
 - [Overview](#overview)
 - [Installation](#installation)
-- [Project Structure](#associated-files)
+- [Project Structure](#project-structure)
 - [Data Folder](#data-folder)
 - [Source Folder](#src-folder)
 - [Docs Folder](#docs-folder)
