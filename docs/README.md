@@ -9,19 +9,16 @@
 # Overview
 This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.
 > !NOTE
-> This project is still in progress and has not been completed. I plan on updating this project more after I finish finals for this semester.
+> This project is under active development and will be expanded with additional simulations and analysis.
 </br>
 
-> !NOTE
-> **Disclaimer**
->
-> This project is strictly for educational and research purposes. It is a simulation and study of how network latency, packet loss, and interpolation affect client-side perception of player position in games using UDP.
->
-> **No part of this project is intended for cheating or exploitation in live games.** It does not interact with real game servers, and using similar techniques on live servers may violate game terms of service and applicable laws.
->
-> The goal is to understand the mathematics and network behavior behind lag compensation and interpolation in a controlled, offline environment.
->
-> This repository is strictly for **research and educational purposes**. It **does not** interact with Steam, the Team Fortress 2 client, or live servers, and it must **not** be used to create or distribute cheats or exploits. Running or adapting code in this repo against live game clients or servers may violate Valve's Steam Subscriber Agreement, VAC policies, and applicable laws.
+## Ethical & Legal Disclaimer
+
+This project is intended strictly for educational and research purposes.
+It does not interact with live game servers, clients, or real network traffic,
+and must not be used to create cheats or exploits.
+
+For full details, see [`docs/Disclaimer.md`](docs/Disclaimer.md).
 
 ## Table of Contents
 - [Overview](#overview)
