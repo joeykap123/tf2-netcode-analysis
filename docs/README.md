@@ -18,7 +18,7 @@ This project is intended strictly for educational and research purposes.
 It does not interact with live game servers, clients, or real network traffic,
 and must not be used to create cheats or exploits.
 
-For full details, see [docs/Disclaimer.md](docs/Disclaimer.md).
+For full details, see [Disclaimer.md](Disclaimer.md).
 
 ## Table of Contents
 - [Overview](#overview)
