@@ -2,13 +2,13 @@
 
 **Author:** Joey Kaplan  
 **Date Created:** November 10, 2025  
-**Last Modified:** November 12, 2025  
+**Last Modified:** December 15, 2025  
 **Repository:** 
 **Copyright:** © 2025 Joey Kaplan  
 
 # Overview
 This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.
-> !NOTE
+> **NOTE:**
 > This project is under active development and will be expanded with additional simulations and analysis.
 </br>
 
@@ -36,79 +36,38 @@ For full details, see [Disclaimer.md](Disclaimer.md).
 ```
 NetworkingInVideoGames/
 ├── src/
-│   ├── Player.h                # Defines the Player class
-│   ├── Player.cpp              # Implements Player methods
-│   ├── Position.h              # Defines the Position class
-│   ├── Position.cpp            # Implements Position methods
-│   ├── Interpolation.h         # Defines the Interpolation class
-│   ├── Interpolation.cpp       # Implements Interpolation methods
-│   ├── NetworkCondition.h      # Defines the NetworkCondition class
-│   └── NetworkCondition.cpp    # Implements the NetworkCondition class
-|
+│   ├── Player.h                # Defines the Player class and its attributes
+│   ├── Player.cpp              # Implements Player methods and logic for updating state
+│   ├── Position.h              # Defines a 3D Position class for player coordinates
+│   ├── Position.cpp            # Implements Position methods and helper functions
+│   ├── Interpolation.h         # Declares interpolation algorithms used to smooth movement
+│   ├── Interpolation.cpp       # Implements interpolation strategies (linear, cubic, etc.)
+│   ├── NetworkCondition.h      # Defines network simulation parameters (latency, jitter, packet loss)
+│   └── NetworkCondition.cpp    # Implements network simulation logic
+│
 ├── data/
-|   └── data.json                # JSON data file
+|   └── data.json               # Synthetic dataset of player positions and network events
 |
 ├── docs/
 │   ├── README.md               # Project README
-│   ├── ResearchDoc.md          # Research notes and analysis
+│   ├── ResearchDoc.md          # Research notes and networking analysis
 │   ├── References.md           # External references and sources
 │   └── Disclaimer.md           # Legal and ethical disclaimer
 └── LICENSE                     # MIT License
 ```
----
+# src Folder
+Contains all C++ source code for the simulation, including classes for players, positions, interpolation algorithms, and network condition simulations.
 
 # data Folder
+Contains synthetic datasets of player positions and network events used for testing and visualization.  
 
-## Overview of data.json
-**data.json** contains JSON style data that can be parsed and given to various mathematical functions to understand lag compensation and interpolation. 
-
-> !NOTE
+> **NOTE:**
 >
 > All datasets in this project are **made-up, synthetic examples** created for testing and visualization.  
 > No real network traffic or gameplay data was collected.
 
----
-
-# src Folder
-
-## Overview of Player.h
-
-
-## Overview of Player.cpp
-
-## Overview of Position.h
-
-
-## Overview of Position.cpp
-
-
-## Overview of Interpolation.h
-
-
-## Overview of Interpolation.cpp
-
-
-## Overview of NetworkCondition.h
-
-
-## Overview of NetworkCondition.cpp
-
-
----
-
 # docs Folder
-
-## Overview of Disclaimer.md
-**Disclaimer.md** seeks to explain that this project does not promote cheating or modification of game files. This document states that this project is purely for research and educational purposes.
-
-## Overview of ResearchDoc.md
-**ResearchDoc.md** holds all research and explanations of this project. This document provides information about Team Fortress 2, network protocols, mathematic topics used, and conclusions about this project.
-
-## Overview of References.md
-**References.md** holds all links to websites referenced during the creation of this project. 
-
----
-
+Contains project documentation, research notes, references, and the legal/ethical disclaimer.
 
 # License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
