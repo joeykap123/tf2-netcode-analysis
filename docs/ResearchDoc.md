@@ -264,7 +264,7 @@ Research on these topics has potential for misuse. Please utilize this project r
 
 
 ## 17. References
-See **References.md** for all references.
+See **[References.md](References.md)** for all references.
 
 ### Appendix A: Interpolation Formulas
 Linear Interpolation:  $lerp(P) = P(t) = (1-\alpha)\vec{a} + \alpha\vec{b}$.
