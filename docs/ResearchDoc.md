@@ -13,9 +13,9 @@ TODO:
 
 ## 1. Introduction
 
-Team Fortress 2 is a multiplayer first person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fanbase, and still receives updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
+Team Fortress 2 is a multiplayer first-person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fanbase, and still receives updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
 </br>
-Team Fortress 2 is often notated by the informal name, **TF2**, and as such I will refer to the game by this name within this document.
+Team Fortress 2 is often notated by the informal name, **TF2**, and as such, I will refer to the game by this name within this document.
 
 
 ## 2. Table of Contents
@@ -23,7 +23,7 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 - [Expected Learning Outcomes](#3-expected-learning-outcome)
 - [About UDP](#4-user-datagram-protocol-in-multiplayer-games-benefits-and-trade-offs)
 - [Packet Loss and Reliability](#5-packet-loss-and-reliability)
-- [Latency, Bandwith, and Throughput](#6-latency-vs-bandwidth-vs-throughput)
+- [Latency, Bandwidth, and Throughput](#6-latency-vs-bandwidth-vs-throughput)
 - [About Lag Compensation](#7-lag-compensation-techniques-in-multiplayer-networking)
 - [About Interpolation](#8-interpolation-methods-for-networked-player-movement)
 - [About Extrapolation](#9-what-is-extrapolation-and-why-is-it-important)
@@ -36,7 +36,7 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such I wi
 - [Quality of Service & Network Prioritization](#16-quality-of-service-qos--network-prioritization)
 - [Problems Associated with UDP](#17-challenges-and-security-implications-of-udp-networking)
 - [Simulation Design and Methodology](#18-simulation-methodology)
-- [Results and Obvservations](#19-results-and-observations)
+- [Results and Observations](#19-results-and-observations)
 - [Discussion](#20-discussion)
 - [Limitations](#21-limitations)
 - [Ethical and Educational Context](#22-ethical-considerations)
@@ -52,29 +52,39 @@ This project seeks to provide readers with a thorough understanding of networkin
 ## 4. User Datagram Protocol in Multiplayer Games: Benefits and Trade-Offs
 Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
 </br>
-A major benefit of using UDP is the protocols speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
+A major benefit of using UDP is the protocol's speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
 </br>
-So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Using UDP allows applications to send data faster, consume less overhead, and implemented in a straightfoward fashion. 
+So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Using UDP allows applications to send data faster, consume less overhead, and be implemented in a straightforward fashion. 
 </br>
-While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over (Transmission Control Protocol) TCP. Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
+While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over Transmission Control Protocol (TCP). Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
 
 
 ## 5. Packet Loss and Reliability
 
 ## 6. Latency vs Bandwidth vs Throughput
+Latency, bandwidth, and throughput are all distinct, yet related topics that affect network reliability.
+</br>
+Latency is the time it takes for a packet to travel from a source to a destination, measured in milliseconds (ms). 
+
+Furthermore, server location, network congestion, protocol efficiency, and network infrastructure can lead to changes in latency [12](References.md).
+</br>
+Bandwidth is the maximum amount of data that can travel over a network at a given time, measured in bits per second (bps). 
+</br>
+Throughput is the amount of data successfully transferred within a given network in a given time, measured in bits per second (bps).
+</br>
 
 ## 7. Lag Compensation Techniques in Multiplayer Networking
 
-Lag compensation is "using a snapshot from a previous players position to balance latency issues". This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
+Lag compensation is "using a snapshot from a previous player's position to balance latency issues." This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
 
 ---
 ## 8. Interpolation Methods for Networked Player Movement
 
-Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a players next position based on prior data.
+Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a player's next position based on prior data.
 </br>
 Notable interpolation strategies include Linear Interpolation, Cubic Interpolation, and Nearest-Neighbor Interpolation. We will explore these interpolation strategies and hypothesize which method TF2 uses. 
 </br></br>
-Let us define a players position as:</br>
+Let us define a player's position as:</br>
 $P(t) = [x(t), y(t), z(t)]$
 </br>
 Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector at a given time.
@@ -100,7 +110,7 @@ $P(t) = (1 - \alpha)[2,3,4] + \alpha[4,3,4]$
 Therefore, let us solve for alpha: $\alpha = \frac{0.25 - 0}{1 - 0} = 0.25$. </br>
 $P(t) = (1 - 0.25)[2,3,4] + 0.25[4,3,4]</br>
 Computing this formula gives a position of $[2.5, 3, 4]$. </br>
-Therefore, we predict via linear interpolation that the players position at 0.25 seconds will be $[2.5,3,4]$
+Therefore, we predict via linear interpolation that the player's position at 0.25 seconds will be $[2.5,3,4]$
 
 Linear Interpolation is often used due to its simple and fast visualization.
 
@@ -127,11 +137,11 @@ $P(t) = (2s^3 - 3s^2 + 1)\vec{P_0} + (-2s^3 + 3s^2)\vec{P_1} + (s^3 - 2s^2 + s)\
 We must calculate $s$: </br>
 $s = \frac{0.5 - 0}{1 - 0} = 0.5$</br>
 Thus, $P(t) = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1} + ((0.5)^3 - 2(0.5)^2 + (0.5))\vec{M_0} + ((0.5)^3 - (0.5)^2)\vec{M_1}$ </br>
-Appling our tangents:</br>
+Applying our tangents:</br>
 $P(t) = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1} + ((0.5)^3 - 2(0.5)^2 + (0.5))[0,0,0] + ((0.5)^3 - (0.5)^2)[0,0,0] = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1}$ </br>
 Therefore, we can compute our remaining terms: </br>
 $P(t) = (2(0.5)^3 - 3(0.5)^2 + 1)\vec{P_0} + (-2(0.5)^3 + 3(0.5)^2)\vec{P_1} = (2(0.125) - 3(0.25) + 1)\vec{P_0} + (-2(0.125) + 3(0.25))\vec{P_1} = (0.25 - 0.75 + 1)\vec{P_0} + (-0.25 + 0.75)\vec{P_1} = 0.5\vec{P_0} + 0.5\vec{P_1}$</br>
-Thus, we can move onto our final step and substitue $\vec{P_0}$ and $\vec{P_1}$:</br>
+Thus, we can move onto our final step and substitute $\vec{P_0}$ and $\vec{P_1}$:</br>
 $P(t) = 0.5\vec{P_0} + 0.5\vec{P_1} = 0.5[10,20,1] + 0.5[13,23,0] = [11.5, 21.5, 0.5]$</br></br>
 
 Therefore, we predict via cubic (Hermite) interpolation that the players position at 0.5 seconds will be $[11.5,21.5,0.5]$
@@ -152,7 +162,7 @@ $S_i(x) = a_{i}x^3 + b_{i}x^2 + c_{i}x + d_{i}$
 ---
 
 ## 9. What is Extrapolation and Why is it Important?
-Extrapolation is a concept similar to interpolation, but an important concept nontheless. Extrapolation allows us to "predict" the next position of an object based on the trend of previous points.
+Extrapolation is a concept similar to interpolation, but an important concept nonetheless. Extrapolation allows us to "predict" the next position of an object based on the trend of previous points.
 
 ---
 
@@ -186,12 +196,12 @@ TF2 has cl_interp (TODO)
 ## 14. Server Architectures: Iterative vs Concurrent Processing
 Servers operate using two common architectures; Iterative and Concurrent. The best server type depends on what usage will be needed. 
 </br>
-Iterative servers are relatively more simple, have less overhead, and are cheaper. Additionally, Iterative Server Architecture processes one client connection at a time, ___. Thus, Iterative Servers function well when only one client needs to be processed at a time. For instance, an online chess game or a website for buying tickets. Both of these application need iterative server structure to ensure data arrives based on when a client connected.
+Iterative servers are relatively more simple, have less overhead, and are cheaper. Additionally, Iterative Server Architecture processes one client connection at a time, ___. Thus, Iterative Servers function well when only one client needs to be processed at a time. For instance, an online chess game or a website for buying tickets. Both of these applications need an iterative server structure to ensure data arrives based on when a client connects.
 </br>
 Concurrent servers are more complex, have more overhead, and tend to be more expensive. This server architecture can accept multiple clients at the same time, allowing multi-client interactions. This server type is extremely useful for online gaming, large websites with constant traffic, and databases.
 </br>
 
-TODO:: Discuss thread based v process based v event based. Can also put a short paragraph about atomicity, but not too in depth. 
+TODO:: Discuss thread-based v process-based v event-based. Can also put a short paragraph about atomicity, but not too in depth. 
 
 
 ---
@@ -202,25 +212,29 @@ Different client clocks
 
 
 ## 16. Quality of Service (QoS) / Network Prioritization
-Go over how client side gameplay is prioritized over cosmetics and items.
+Go over how client-side gameplay is prioritized over cosmetics and items.
 
 ## 17. Challenges and Security Implications of UDP Networking
-However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, noteably when cheating becomes involved. </br>
+However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, notably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
 Beyond TF2's specific commands, cheating in online servers is popular and hard to catch. This is due to the nature of UDP; This protocol is built for speed, making packet loss inevitable. Knowing this, cheaters can use strategies such as modification of interpolation to simulate innocent packet loss, leading to difficulty in telling cheaters apart from players with poor connection. 
 </br>
 
-Additionally, topics such as Denial of Service (DoS) attacks can be executed on these servers with little difficulty and little risk of being caught. Since DoS attacks leverage sending many requests to a server in a short time period, servers using UDP are at specific risk. Since UDP does not require a three-way handshake to establish connection like TCP, an attacker can easily overwhelm UDP servers. 
+Additionally, topics such as Denial of Service (DoS) attacks can be executed on these servers with little difficulty and little risk of being caught. Since DoS attacks leverage sending many requests to a server in a short time period, servers using UDP are at specific risk. Since UDP does not require a three-way handshake to establish a connection like TCP, an attacker can easily overwhelm UDP servers. 
 </br>
 
-IP Spoofing can also be easily executed over UDP connections. Since UDP has no way to verify identity, attackers can send requests to the server using the victims IP, leading to large amounts of data being sent to the victims system.
+IP Spoofing can also be easily executed over UDP connections. Since UDP has no way to verify identity, attackers can send requests to the server using the victim's IP, leading to large amounts of data being sent to the victim's system.
 </br>
 
-It should be noted that DoS attacks are not as malicious in nature when implemented on gaming servers, as often, they are a means to make the attacker win or gain an upperhand.
+It should be noted that DoS attacks are not as malicious in nature when implemented on gaming servers, as they are often a means to give the attacker an advantage or win.
 
 > !NOTE
 > Do not cheat or use this project as inspiration for cheating.
+
+### Emerging Transport Protocols: QUIC
+TODO:::
+
 
 ## 18. Simulation Methodology
 
@@ -228,15 +242,15 @@ To create the simulation for this project, we must go through various steps:</br
 1. Generate a JSON file of Player objects to parse.
     1. Players are represented as objects with position vectors. 
     2. Position vectors will be 3-dimensional
-2. Simulate various network conditions including latency, jitter, and packet losst
-3. Apply interpolation and lag compensation algorithms to synthetic positions to predict next position.
+2. Simulate various network conditions, including latency, jitter, and packet loss
+3. Apply interpolation and lag compensation algorithms to synthetic positions to predict the next position.
 4. Compare algorithm results with expected results and predict if the player is cheating or simply suffering packet loss.
     
     
 
 ## 19. Results and Observations
 
-Let us analyze our results of this project:
+Let us analyze the results of this project:
 
     TODO!!!
     Compare simulated “real” vs “interpolated” positions.
@@ -266,7 +280,7 @@ Let us analyze our results of this project:
 - Synthetic data only
 
 ## 22. Ethical Considerations
-Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** cheat or use this project to cheat or as inspiration to cheat.
+Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** use it to cheat or as inspiration to cheat.
 
 ## 23. Conclusion
 
