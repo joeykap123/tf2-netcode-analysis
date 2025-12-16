@@ -66,7 +66,7 @@ Latency, bandwidth, and throughput are all distinct, yet related topics that aff
 </br>
 Latency is the time it takes for a packet to travel from a source to a destination, measured in milliseconds (ms). 
 
-Furthermore, server location, network congestion, protocol efficiency, and network infrastructure can lead to changes in latency [12](References.md).
+Furthermore, server location, network congestion, protocol efficiency, and network infrastructure can lead to changes in latency [12](References.md#ref12).
 </br>
 Bandwidth is the maximum amount of data that can travel over a network at a given time, measured in bits per second (bps). 
 </br>
