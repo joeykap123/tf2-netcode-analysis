@@ -3,7 +3,7 @@
 **Author:** Joey Kaplan  
 **Date Created:** November 10, 2025  
 **Last Modified:** December 15, 2025  
-**Repository:** [Networking In Video Games](https://github.com/joeykap123/Projects/tree/main/NetworkingInVideoGames) </br>
+**Repository:** [Networking In Video Games](https://github.com/joeykap123/tf2-netcode-analysis) </br>
 **Copyright:** © 2025 Joey Kaplan  
 
 # Overview
