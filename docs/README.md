@@ -70,5 +70,5 @@ Contains synthetic datasets of player positions and network events used for test
 Contains project documentation, research notes, references, and the legal/ethical disclaimer.
 
 # License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](docs/LICENSE) file for details.
 © 2025 Joey Kaplan. All rights reserved except as permitted under the MIT License.
