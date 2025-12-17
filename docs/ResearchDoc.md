@@ -30,7 +30,7 @@ Team Fortress 2 is often notated by the informal name, **TF2**, and as such, I w
 - [Event & State Synchronization](#10-event--state-synchronization-and-consistency-in-tf2)
 - [Client Prediction](#11-client-prediction)
 - [Tick-Rate and Jitter Handling](#12-tick-rate-and-jitter-handling)
-- [TF2 Specific Dynamics](#13-latency-dynamics-in-tf2)
+- [Networked Movement Mechanics in Team Fortress 2](#13-networked-movement-mechanics-in-team-fortress-2)
 - [Server Architecture](#14-server-architectures-iterative-vs-concurrent-processing)
 - [Time Synchronization & Clock Drift](#15-time-synchronization--clock-drift)
 - [Quality of Service & Network Prioritization](#16-quality-of-service-qos--network-prioritization)
@@ -188,8 +188,44 @@ ___ sharing among threads requires sycnhronization. We can avoid the question of
 
 ---
 
-## 13. Latency Dynamics in TF2
-TF2 has cl_interp (TODO)
+## 13. Networked Movement Mechanics in Team Fortress 2
+
+### Baseline Player Movement and Physics
+Walking, strafing, jumping
+
+Ground vs airborne control
+
+Deterministic inputs and server authority
+
+Expected behavior under latency
+### Client Prediction and Server Reconciliation in TF2
+Input prediction loop
+
+Server corrections
+
+Error smoothing during standard movement
+
+Why movement feels responsive
+### Interpolation of Remote Player Movement
+Interpolation buffer and delay
+
+Visual smoothing vs accuracy
+
+Minor artifacts under normal play
+
+>NOTE mention cl_interp
+### Rocket Jumping as a Case Study in Networked Physics
+Server-authoritative explosion physics
+
+Absence of lag compensation for blast forces
+
+High-velocity, non-linear acceleration
+
+Prediction error and reconciliation artifacts
+
+Interpolation breakdown during extreme motion
+
+> !NOTE can mention cl_interp again to explore more
 
 ---
 
