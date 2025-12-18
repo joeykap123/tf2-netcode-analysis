@@ -203,7 +203,7 @@ Ground vs airborne control
 (Talk about strafing more in detail here)
 
 Deterministic inputs and server authority  
-
+(need to handle state sync v determjnsitc lockstep. maybe need to merge the sync section?)
 
 Expected behavior under latency
 
