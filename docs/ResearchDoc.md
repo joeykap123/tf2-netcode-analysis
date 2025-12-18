@@ -10,47 +10,47 @@ TODO:
 - Add TF2-specific examples for lag compensation
 - Proofread results and discussion sections
 
+## Abstract
 
-## 1. Introduction
-
-Team Fortress 2 is a multiplayer first-person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fanbase, and still receives updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
-</br>
-Team Fortress 2 is often notated by the informal name, **TF2**, and as such, I will refer to the game by this name within this document.
-
-
-## 2. Table of Contents
-- [Introduction](#1-introduction)
-- [Expected Learning Outcomes](#3-expected-learning-outcome)
-- [About UDP](#4-user-datagram-protocol-in-multiplayer-games-benefits-and-trade-offs)
-- [Packet Loss and Reliability](#5-packet-loss-and-reliability)
-- [Latency, Bandwidth, and Throughput](#6-latency-vs-bandwidth-vs-throughput)
-- [About Lag Compensation](#7-lag-compensation-techniques-in-multiplayer-networking)
-- [About Interpolation](#8-interpolation-methods-for-networked-player-movement)
-- [About Extrapolation](#9-what-is-extrapolation-and-why-is-it-important)
-- [Event & State Synchronization](#10-event--state-synchronization-and-consistency-in-tf2)
-- [Client Prediction](#11-client-prediction)
-- [Tick-Rate and Jitter Handling](#12-tick-rate-and-jitter-handling)
-- [Networked Movement Mechanics in Team Fortress 2](#13-networked-movement-mechanics-in-team-fortress-2)
-- [Server Architecture](#14-server-architectures-iterative-vs-concurrent-processing)
-- [Time Synchronization & Clock Drift](#15-time-synchronization--clock-drift)
-- [Quality of Service & Network Prioritization](#16-quality-of-service-qos--network-prioritization)
-- [Problems Associated with UDP](#17-challenges-and-security-implications-of-udp-networking)
-- [Simulation Design and Methodology](#18-simulation-methodology)
-- [Results and Observations](#19-results-and-observations)
-- [Discussion](#20-discussion)
-- [Limitations](#21-limitations)
-- [Ethical and Educational Context](#22-ethical-considerations)
-- [Conclusion](#23-conclusion)
-- [References](#24-references)
+## Table of Contents
+1. [Introduction](#1-introduction)
+2. [Expected Learning Outcomes](#2-expected-learning-outcome)
+3. [About UDP](#3-user-datagram-protocol-in-multiplayer-games-benefits-and-trade-offs)
+4. [Packet Loss and Reliability](#4-packet-loss-and-reliability)
+5. [Latency, Bandwidth, and Throughput](#5-latency-vs-bandwidth-vs-throughput)
+6. [About Lag Compensation](#6-lag-compensation-techniques-in-multiplayer-networking)
+7. [About Interpolation](#7-interpolation-methods-for-networked-player-movement)
+8. [About Extrapolation](#8-what-is-extrapolation-and-why-is-it-important)
+9. [Event & State Synchronization](#9-event--state-synchronization-and-consistency-in-tf2)
+10. [Client Prediction](#10-client-prediction)
+11. [Tick-Rate and Jitter Handling](#11-tick-rate-and-jitter-handling)
+12. [Networked Movement Mechanics in Team Fortress 2](#12-networked-movement-mechanics-in-team-fortress-2)
+13. [Server Architecture](#13-server-architectures-iterative-vs-concurrent-processing)
+14. [Time Synchronization & Clock Drift](#14-time-synchronization--clock-drift)
+15. [Quality of Service & Network Prioritization](#15-quality-of-service-qos--network-prioritization)
+16. [Problems Associated with UDP](#16-challenges-and-security-implications-of-udp-networking)
+17. [Simulation Design and Methodology](#17-simulation-methodology)
+18. [Results and Observations](#18-results-and-observations)
+19. [Discussion](#19-discussion)
+20. [Limitations](#20-limitations)
+21. [Ethical and Educational Context](#21-ethical-considerations)
+22. [Conclusion](#22-conclusion)
+23. [References](#23-references)
 - [Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 - [Appendix B: Simulation Parameters](#appendix-b-simulation-parameters)
 
 
-## 3. Expected Learning Outcome
+## 1. Introduction
+
+Team Fortress 2 is a multiplayer first-person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fan base, and continues to receive updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
+</br>
+Team Fortress 2 is often reffered to by the informal name, **TF2**, and as such, I will refer to the game by this name within this document.
+
+## 2. Expected Learning Outcome
 This project seeks to provide readers with a thorough understanding of networking principles associated with TF2.
 
-## 4. User Datagram Protocol in Multiplayer Games: Benefits and Trade-Offs
-Two major connection protocols are used throughout the world; TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
+## 3. User Datagram Protocol in Multiplayer Games: Benefits and Trade-Offs
+Two major connection protocols are used throughout the world: TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
 </br>
 A major benefit of using UDP is the protocol's speed. UDP allows data transfer in an efficient and fast manner, ensuring live applications do not suffer from extensive wait time. 
 </br>
@@ -59,9 +59,9 @@ So what are the benefits of UDP? UDP is notably fast, efficient, and simple. Usi
 While UDP is very fast and efficient, there are a few trade-offs that exist by choosing this protocol over Transmission Control Protocol (TCP). Notably, UDP can suffer from packet loss. This means that data arriving to the server or client is not always complete and it has the possiblity of being corrupted. In most cases, this is not a problem since the applications that use UDP rely on fast data transfer and the loss of data is not a major concern. However, this packet loss can lead to stutters and lag during gameplay. Thus, we introduce the topics of lag compensation and interpolation.
 
 
-## 5. Packet Loss and Reliability
+## 4. Packet Loss and Reliability
 
-## 6. Latency vs Bandwidth vs Throughput
+## 5. Latency vs Bandwidth vs Throughput
 Latency, bandwidth, and throughput are all distinct, yet related topics that affect network reliability.
 </br>
 Latency is the time it takes for a packet to travel from a source to a destination, measured in milliseconds (ms). 
@@ -73,12 +73,12 @@ Bandwidth is the maximum amount of data that can travel over a network at a give
 Throughput is the amount of data successfully transferred within a given network in a given time, measured in bits per second (bps).
 </br>
 
-## 7. Lag Compensation Techniques in Multiplayer Networking
+## 6. Lag Compensation Techniques in Multiplayer Networking
 
 Lag compensation is "using a snapshot from a previous player's position to balance latency issues." This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
 
 ---
-## 8. Interpolation Methods for Networked Player Movement
+## 7. Interpolation Methods for Networked Player Movement
 
 Interpolation, as a general concept, is a mathematical estimation of some set of datas corresponding function. This is extremely useful for smoothing data, analyzing trends, and creating continuous data. This is an important mathematical topic for online video games, since the use of UDP often results in the loss of packets. Thus, the usage of interpolation allows game servers to estimate a player's next position based on prior data.
 </br>
@@ -87,7 +87,7 @@ Notable interpolation strategies include Linear Interpolation, Cubic Interpolati
 Let us define a player's position as:</br>
 $P(t) = [x(t), y(t), z(t)]$
 </br>
-Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)] indicates the 3-D player position vector at a given time.
+Where P(t) indicates a Player's position at a given time, and $[x(t), y(t), z(t)]$ indicates the 3-D player position vector at a given time.
 
 [Go to Appendix A: Interpolation Formulas](#appendix-a-interpolation-formulas)
 ---
@@ -161,12 +161,12 @@ $S_i(x) = a_{i}x^3 + b_{i}x^2 + c_{i}x + d_{i}$
         TODO::::
 ---
 
-## 9. What is Extrapolation and Why is it Important?
+## 8. What is Extrapolation and Why is it Important?
 Extrapolation is a concept similar to interpolation, but an important concept nonetheless. Extrapolation allows us to "predict" the next position of an object based on the trend of previous points.
 
 ---
 
-## 10. Event & State Synchronization and Consistency in TF2
+## 9. Event & State Synchronization and Consistency in TF2
 What is synchronization (1)
 What is event v state sync (2)
 </br>
@@ -180,24 +180,33 @@ ___ sharing among threads requires sycnhronization. We can avoid the question of
 ---
 
 
-## 11. Client Prediction
+## 10. Client Prediction
 
 ---
 
-## 12. Tick-Rate and Jitter Handling
+## 11. Tick-Rate and Jitter Handling
 
 ---
 
-## 13. Networked Movement Mechanics in Team Fortress 2
+## 12. Networked Movement Mechanics in Team Fortress 2
 
 ### Baseline Player Movement and Physics
 Walking, strafing, jumping
+</br>
+Team Fortress 2 has various unique movement mechanics due to the use of Source Engine. (Walking, strafing, jumping)
 
-Ground vs airborne control
+First, players can walk within the game, allowing traversal across a map.
+Second, players can strafe when in the air. (Talk about strafing to change direction or land in a different position)(Talk about how this mechanic is unique to Valve's games/games made with Source Engine)
+Finally, players can jump (Put more information)
 
-Deterministic inputs and server authority
+Ground vs airborne control  
+(Talk about strafing more in detail here)
+
+Deterministic inputs and server authority  
+
 
 Expected behavior under latency
+
 ### Client Prediction and Server Reconciliation in TF2
 Input prediction loop
 
@@ -229,7 +238,7 @@ Interpolation breakdown during extreme motion
 
 ---
 
-## 14. Server Architectures: Iterative vs Concurrent Processing
+## 13. Server Architectures: Iterative vs Concurrent Processing
 Servers operate using two common architectures; Iterative and Concurrent. The best server type depends on what usage will be needed. 
 </br>
 Iterative servers are relatively more simple, have less overhead, and are cheaper. Additionally, Iterative Server Architecture processes one client connection at a time, ___. Thus, Iterative Servers function well when only one client needs to be processed at a time. For instance, an online chess game or a website for buying tickets. Both of these applications need an iterative server structure to ensure data arrives based on when a client connects.
@@ -243,14 +252,14 @@ TODO:: Discuss thread-based v process-based v event-based. Can also put a short 
 ---
 
 
-## 15. Time Synchronization & Clock Drift
+## 14. Time Synchronization & Clock Drift
 Different client clocks
 
 
-## 16. Quality of Service (QoS) / Network Prioritization
+## 15. Quality of Service (QoS) / Network Prioritization
 Go over how client-side gameplay is prioritized over cosmetics and items.
 
-## 17. Challenges and Security Implications of UDP Networking
+## 16. Challenges and Security Implications of UDP Networking
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, notably when cheating becomes involved. </br>
 
 Team Fortress 2 has a notable command that players can modify within their console, known as **cl_interp**. 
@@ -272,7 +281,7 @@ It should be noted that DoS attacks are not as malicious in nature when implemen
 TODO:::
 
 
-## 18. Simulation Methodology
+## 17. Simulation Methodology
 
 To create the simulation for this project, we must go through various steps:</br>
 1. Generate a JSON file of Player objects to parse.
@@ -284,7 +293,7 @@ To create the simulation for this project, we must go through various steps:</br
     
     
 
-## 19. Results and Observations
+## 18. Results and Observations
 
 Let us analyze the results of this project:
 
@@ -301,7 +310,7 @@ Let us analyze the results of this project:
     
     Discuss parameter effects (interpolation delay, buffer size).
 
-## 20. Discussion
+## 19. Discussion
 
     TODO!!! Trade off between smooth visuals and responsiveness
     How ambiguity in UDP networking could be mistaken for cheating.
@@ -309,19 +318,19 @@ Let us analyze the results of this project:
     
     
 
-## 21. Limitations
+## 20. Limitations
 - No physics engine
 - Simplified player model
 - Limited tick rates
 - Synthetic data only
 
-## 22. Ethical Considerations
+## 21. Ethical Considerations
 Research on these topics has potential for misuse. Please utilize this project responsibly and **do not** use it to cheat or as inspiration to cheat.
 
-## 23. Conclusion
+## 22. Conclusion
 
 
-## 24. References
+## 23. References
 See **[References.md](References.md)** for all references.
 
 ### Appendix A: Interpolation Formulas
