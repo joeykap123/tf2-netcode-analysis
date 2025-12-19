@@ -77,6 +77,11 @@ Throughput is the amount of data successfully transferred within a given network
 
 Lag compensation is "using a snapshot from a previous player's position to balance latency issues." This is a common strategy implemented in many online games to ensure players are on equal ground. A server might "rewind" a player to a previous position to balance when the server received a message about interaction with the player.
 
+
+### Hit Registration Models
+- Hitscan weapons (server rewind)
+- Projectile weapons (no rewind)
+- Why latency affects classes differently
 ---
 ## 7. Interpolation Methods for Networked Player Movement
 
@@ -176,15 +181,34 @@ State-based synchronization relies on some conditional statement
 ___ sharing among threads requires sycnhronization. We can avoid the question of machine code atomicity, declaring the need for cache coherence, and 
 
 
+### Out-of-Order Packets and Sequence Numbers
+
+### Snapshot and Delta-Based State Updates
+
+---
+
+## 10. Server Authority
 
 ---
 
 
-## 10. Client Prediction
+## 11. Client Prediction
 
 ---
+
+
+# 12. Server Reconciliation
+- Authoritative corrections
+- Reapplication of inputs
+- Error handling (general)
+---
+
 
 ## 11. Tick-Rate and Jitter Handling
+
+### Snapshot Frequency vs Tick Rate
+
+### Fixed Timestep vs Render Rate
 
 ---
 
@@ -207,7 +231,7 @@ Deterministic inputs and server authority
 
 Expected behavior under latency
 
-### Client Prediction and Server Reconciliation in TF2
+### Application of Prediction and Reconciliation in TF2 Movement
 Input prediction loop
 
 Server corrections
@@ -215,6 +239,8 @@ Server corrections
 Error smoothing during standard movement
 
 Why movement feels responsive
+
+
 ### Interpolation of Remote Player Movement
 Interpolation buffer and delay
 
@@ -258,6 +284,8 @@ Different client clocks
 
 ## 15. Quality of Service (QoS) / Network Prioritization
 Go over how client-side gameplay is prioritized over cosmetics and items.
+
+### Snapshot Frequency vs Tick Rate
 
 ## 16. Challenges and Security Implications of UDP Networking
 However, while lag compensation and interpolation generally result in better gameplay, these concepts can become problematic, notably when cheating becomes involved. </br>
