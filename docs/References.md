@@ -1,9 +1,16 @@
 # References
 
-<a id="3"></a>
-<a name="ref3"></a>
+<a id="2"></a>
+<a name="ref2"></a>
 [3] Valve Software, *Source SDK 2013*, GitHub repository, 2013.  
 Available at: https://github.com/ValveSoftware/source-sdk-2013
+
+<a id="3"></a>
+<a name="ref3"></a>
+[2] Y. W. Bernier,  
+Valve Developer Community,  
+"Server In-game Protocol Design and Optimization,"  
+Available at: https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization
   
 <a id="4"></a>
 <a name="ref4"></a>
