@@ -352,3 +352,5 @@ Spline Interpolation:
 | Packet Loss               | 0-10%       | Randomly simulated loss                     |
 | Latency                   | 50-200 ms   | Round-trip time applied per simulated player|
 | Number of Players         | 5           | Number of simulated entities                |
+
+[Back to Top](#abstract)
