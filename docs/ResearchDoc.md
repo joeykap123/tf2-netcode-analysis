@@ -9,6 +9,7 @@ TODO:
 - Add missing networking concepts: TCP vs UDP, packet loss, time synchronization
 - Add TF2-specific examples for lag compensation
 - Proofread results and discussion sections
+- todo: lowercase src file names to fit naming conventions + ensure cross OS compatability
 
 ## Abstract
 
