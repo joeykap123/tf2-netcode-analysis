@@ -51,6 +51,7 @@ NetworkingInVideoGames/
 ├── docs/
 │   ├── README.md               # Project README
 │   ├── ResearchDoc.md          # Research notes and networking analysis
+│   ├── CodeAnalysis.md         # Source SDK 2013 source code analysis
 │   ├── References.md           # External references and sources
 │   └── Disclaimer.md           # Legal and ethical disclaimer
 └── LICENSE                     # MIT License
@@ -67,7 +68,7 @@ Contains synthetic datasets of player positions and network events used for test
 > No real network traffic or gameplay data was collected.
 
 # docs Folder
-Contains project documentation, research notes, references, and the legal/ethical disclaimer.
+Contains project documentation, research notes, code analysis, references, and the legal/ethical disclaimer.
 
 # License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
