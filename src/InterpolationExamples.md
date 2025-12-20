@@ -1,10 +1,21 @@
-# Interpolation Examples
+# Interpolation Examples Document
 
-PLACEHOLDER
+## Overview
 
 Going to move interpolation formulas here to declutter Research Doc. (Reader doesn't care about the calculation -> they just want to know how/why it works and if it is a good use for interpolation over another method.
 
 **This document holds examples of calculations found using various interpolation formulas.**
+
+
+## Interpolation Formulas (Reference)
+**Linear Interpolation:**  
+$P(t) = $  
+**Cubic Hermite Interpolation:**  
+$P(t) = $  
+**Cubic Spline Interpolation:**  
+$P(t) = $  
+**Nearest Neighbor Interpolation:**  
+$P(t) = $  
 
 ## LINEAR INTERPOLATION
 
@@ -27,7 +38,7 @@ $P(t) = (1 - 0.25)[2,3,4] + 0.25[4,3,4]</br>
 Computing this formula gives a position of $[2.5, 3, 4]$. </br>
 Therefore, we predict via linear interpolation that the player's position at 0.25 seconds will be $[2.5,3,4]$
 
-TODO:: FIX SOME wording to make this sound better and more polished
+TODO:: FIX SOME wording to make this sound better and more polished (maybe restructure to: concept -> formula -> example -> result -> note)
 ## CUBIC HERMIE INTERPOLATION
 
 ## CUBIC SPLINE INTERPOLATION
