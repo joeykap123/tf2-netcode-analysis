@@ -82,10 +82,16 @@ Available at: https://www2.cs.sfu.ca/CourseCentral/401/bgao/slides/chp11.pdf
 
 <a id="14"></a>
 <a name="ref14"></a>
-[14] Martin Kleppmann  
-"Distributed Systems 3.2: Clock Synchronization"  
+[14] Martin Kleppmann,  
+"Distributed Systems 3.2: Clock Synchronization,"  
 Available at: https://www.youtube.com/watch?v=mAyW-4LeXZo  
 
+<a id="15"></a>
+<a name="ref15"></a>
+[15] M. Han,  
+CS 326E Computer Networks,  
+"Lecture 02: Packets, Routing, and Performance,"  
+Available at: https://www.cs.utexas.edu/~mhan/courses/cs326e/sp25/lecture_notes/CS326E-02-02-Network%20Performance.pdf
 
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
