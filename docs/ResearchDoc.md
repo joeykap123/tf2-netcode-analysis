@@ -48,10 +48,10 @@ TODO:
 
 Team Fortress 2 is a multiplayer first-person shooter game created by Valve in 2007. The game remains popular since its release, maintains  a devoted fan base, and continues to receive updates as of 2025. The game was released on Steam, Valve's digital distribution service, providing dedicated servers and a large community. 
 </br>
-Team Fortress 2 is often reffered to by the informal name, **TF2**, and as such, I will refer to the game by this name within this document.
+Team Fortress 2 is often referred to by the informal name, **TF2**, and as such, I will refer to the game by this name within this document.
 
 ## 2. Expected Learning Outcome
-This project seeks to provide readers with a thorough understanding of networking principles associated with TF2.
+This project seeks to provide readers with a thorough understanding of networking principles associated with TF2. 
 
 ## 3. User Datagram Protocol in Multiplayer Games: Benefits and Trade-Offs
 Two major connection protocols are used throughout the world: TCP and UDP. Many online games, streaming services, and video conferencing applications use UDP. Let us examine why TF2 uses UDP.
@@ -64,6 +64,7 @@ While UDP is very fast and efficient, there are a few trade-offs that exist by c
 
 
 ## 4. Packet Loss and Reliability
+Packet loss occurs when packets (data) arrives to a full buffer, thus being lost because they cannot be added to the queue.
 
 ## 5. Latency vs Bandwidth vs Throughput
 Latency, bandwidth, and throughput are all distinct, yet related topics that affect network reliability.
