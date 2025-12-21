@@ -6,7 +6,9 @@
 **Repository:** [Networking In Video Games](https://github.com/joeykap123/tf2-netcode-analysis) </br>
 **Copyright:** © 2025 Joey Kaplan  
 
-# Overview
+# About This Project
+This project began during my junior year, while taking CS 4400: Computer Systems at the University of Utah. As we explored networking concepts towards the latter portion of the semester, I became fascinated with concepts such as client-server communication and synchronization. I decided to implement a project exploring various networking principles in one of my favorite games--Team Fortress 2.  
+**TODO::** Make this sound nicer  
 This project seeks to analyze various networking principles in Team Fortress 2, a game by Valve. Within this project, we will explore networking concepts and how they relate to online gaming. We will also explore phenomenons of cheating and how these methods are executed.
 > **NOTE:**
 > This project is under active development and will be expanded with additional simulations and analysis.
@@ -21,7 +23,7 @@ and must not be used to create cheats or exploits.
 For full details, see [Disclaimer.md](Disclaimer.md).
 
 ## Table of Contents
-- [Overview](#overview)
+- [About This Project](#about-this-project)
 - [Installation](#installation)
 - [Project Structure](#project-structure)
 - [Data Folder](#data-folder)
@@ -69,6 +71,10 @@ Contains synthetic datasets of player positions and network events used for test
 
 # docs Folder
 Contains project documentation, research notes, code analysis, references, and the legal/ethical disclaimer.
+
+# Features & Key Components
+Basically take resume section and tweak it to be more technical, instead of appealing to employers.
+
 
 # License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
