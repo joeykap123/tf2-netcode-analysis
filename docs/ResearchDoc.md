@@ -266,13 +266,24 @@ TODO:: Discuss thread-based v process-based v event-based. Can also put a short 
 
 ## 14. Time Synchronization & Clock Drift
 
-**Physical Time**
-- Physical time (clock drift, clock skew, synchronization methods (i.e, NTP, GPS), Limits of no global clock)
+**14.1 Physical Time and Its Limitations**
+- Definition of physical clocks
 
-Because physical clocks cannot provide perfect global ordering, distributed systems often use logical time.
+- Clock drift & skew (1–2 paragraphs)
 
-**Logical Time**
-- Lamport/Vector clocks, causal ordering, event ordering v real time
+- Mention of synchronization (NTP/GPS) without details
+
+As a result, physical clocks cannot provide a reliable global ordering of events. For this reason, distributed systems often rely on logical notions of time instead.
+
+**14.2 Logical Time and Event Ordering in TF2**
+- One paragraph defining logical time (informal)
+- One paragraph mapping to TF2:
+  - Server ticks
+  - Command numbers
+  - Snapshot sequence IDs
+- One sentence acknowledging Lamport/vector clocks without diving in
+
+While distributed systems research formalizes logical time through mechanisms such as Lamport and vector clocks, Team Fortress 2 employs a simplified model based on server-enforced tick ordering, which is sufficient for its centralized architecture.
 
 ## 15. Quality of Service (QoS) / Network Prioritization
 Go over how client-side gameplay is prioritized over cosmetics and items.
