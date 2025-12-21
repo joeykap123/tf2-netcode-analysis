@@ -80,5 +80,12 @@ Available at: https://aws.amazon.com/compare/the-difference-between-throughput-a
 TODO:: NEED TO REFINE THIS CITATION, SINCE AUTHOR IS NOT KNOWN AND TITLE IS LIKELY INCORRECTLY FORMATTED.
 Available at: https://www2.cs.sfu.ca/CourseCentral/401/bgao/slides/chp11.pdf
 
+<a id="14"></a>
+<a name="ref14"></a>
+[14] Martin Kleppmann  
+"Distributed Systems 3.2: Clock Synchronization"  
+Available at: https://www.youtube.com/watch?v=mAyW-4LeXZo  
+
+
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
