@@ -93,5 +93,12 @@ CS 326E Computer Networks,
 "Lecture 02: Packets, Routing, and Performance,"  
 Available at: https://www.cs.utexas.edu/~mhan/courses/cs326e/sp25/lecture_notes/CS326E-02-02-Network%20Performance.pdf
 
+<a id="16"></a>
+<a name="ref16"></a>
+[16] H. Huynh,  
+NASA Technical Memorandum 103789,  
+"Accurate Monotone Cubic Interpolation,"  
+Available at: https://ntrs.nasa.gov/api/citations/19910011517/downloads/19910011517.pdf
+
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
