@@ -124,6 +124,8 @@ Extrapolation is a concept similar to interpolation, but an important concept no
 ---
 
 ## 9. Event & State Synchronization and Consistency in TF2
+Synchronization 
+
 What is synchronization (1)
 What is event v state sync (2)
 </br>
@@ -158,9 +160,34 @@ ___ sharing among threads requires sycnhronization. We can avoid the question of
 
 ## 11. Tick-Rate and Jitter Handling
 
+Tick rate is a networking principle unique to gaming. 
+
+The Source SDK 2013 code base uses a fixed tick rate for Team Fortress 2 of 66 Hz, or approximately every ~15 ms.
+
 ### 11.1 Snapshot Frequency vs Tick Rate
 
+TODO:: 
+- Not every tick produces a full snapshot
+
+
+
+- Snapshot rate less than or equal to tick rate
+  
+
+- Delta vs full updates (mention, don't explain)
+Delta compression can be used to reduce network load, essentially only requiring the server to send changes of the game state to clients instead of a whole game snapshot.  
+Full snapshots are used less frequently, often being used only when a game begins or a client suffers heavy packet loss.
+
 ### 12.1 Fixed Timestep vs Render Rate
+
+i.e., tick is just a unit, tick rate is just unit rate, fixed timestep is how much each tick advances simulation (e.g., 1 tick moves game state forward 15 ms)
+
+TODO::
+- server: fixed timestep
+- Client: variable render rate
+- Why interpolation exists
+- Why jitter is visible without buffering 
+
 
 ---
 
