@@ -70,7 +70,15 @@ Available at: https://www.geo.fu-berlin.de/en/v/soga-r/Advances-statistics/Geost
 <a id="12"></a>
 <a name="ref12"></a>
 [12] AWS, “Latency and Throughput.”  
-Available at: https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/</br>
+Available at: https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/
+
+
+<a id="13"></a>
+<a name="ref13"></a>
+[13] Microsoft PowerPoint - Chapter 11,  
+"Chapter 11. Time and Global States"  
+TODO:: NEED TO REFINE THIS CITATION, SINCE AUTHOR IS NOT KNOWN AND TITLE IS LIKELY INCORRECTLY FORMATTED.
+Available at: https://www2.cs.sfu.ca/CourseCentral/401/bgao/slides/chp11.pdf
 
 > [!NOTE] Articles published solely investigating "interp cheating" and other UDP based cheats are minimal.
 > Thus, this project will likely consist of my own research and understanding of these concepts.
