@@ -11,6 +11,9 @@ TODO:
 - Proofread results and discussion sections
 - todo: lowercase src file names to fit naming conventions + ensure cross OS compatability
 
+  STUFF TO ADD:
+  Lamport/Vector Clocks  -- maybe put in sequence number subsection?
+
 ## Abstract
 
 ## Table of Contents
@@ -137,6 +140,10 @@ ___ sharing among threads requires sycnhronization. We can avoid the question of
 
 ### 9.1 Out-of-Order Packets and Sequence Numbers
 
+
+
+Because physical clocks cannot provide perfect global ordering, distributed systems often rely on sequence numbers that act as an internal ordering mechanism, ensuring events and state updates are processed in the correct order.
+
 ### 9.2 Snapshot and Delta-Based State Updates
 
 ---
@@ -258,8 +265,14 @@ TODO:: Discuss thread-based v process-based v event-based. Can also put a short 
 
 
 ## 14. Time Synchronization & Clock Drift
-Different client clocks
 
+**Physical Time**
+- Physical time (clock drift, clock skew, synchronization methods (i.e, NTP, GPS), Limits of no global clock)
+
+Because physical clocks cannot provide perfect global ordering, distributed systems often use logical time.
+
+**Logical Time**
+- Lamport/Vector clocks, causal ordering, event ordering v real time
 
 ## 15. Quality of Service (QoS) / Network Prioritization
 Go over how client-side gameplay is prioritized over cosmetics and items.
