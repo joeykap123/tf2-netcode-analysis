@@ -75,8 +75,15 @@ Furthermore, server location, network congestion, protocol efficiency, and netwo
 </br>
 Bandwidth is the maximum amount of data that can travel over a network at a given time, measured in bits per second (bps). 
 </br>
-Throughput is the amount of data successfully transferred within a given network in a given time, measured in bits per second (bps).
+Throughput is the amount of data successfully transferred within a given network in a given time, measured in bits per second (bps). 
+
+Throughput is impacted by bandwidth, processing power, packet loss, and network topology [12](References.md#ref12).
 </br>
+
+>NOTE
+>It should be noted that bandwidth and throughput are measured in bits per second (bps) as the smallest unit. As technology has evolved, bandwidth and throughput are now often measured using larger units, such as Gigabytes per second (GBps).
+
+Latency and throughput both impact data packet transmission, subtly affecting each other. 
 
 ## 6. Lag Compensation Techniques in Multiplayer Networking
 
@@ -108,7 +115,9 @@ Linear Interpolation is often used due to its simple and fast visualization.
 
 ---
 ### 7.2 Cubic (Hermite) Interpolation  
+
 **7.2.1 Unconstrained Cubic Hermite**  
+
 **7.2.2 Monotonic Cubic Hermite (Slope-Limited)**
 
 
@@ -138,7 +147,6 @@ State-based synchronization relies on some conditional statement
 
 ___ sharing among threads requires sycnhronization. We can avoid the question of machine code atomicity, declaring the need for cache coherence, and 
 
-
 ### 9.1 Out-of-Order Packets and Sequence Numbers
 
 
@@ -150,6 +158,9 @@ Because physical clocks cannot provide perfect global ordering, distributed syst
 ---
 
 ## 10. Server Authority
+In online multiplayer games, the server must maintain the true state of the game.
+
+Server authority also provides a buffer against cheating or client-side code manipulation.
 
 ---
 
@@ -161,7 +172,13 @@ Because physical clocks cannot provide perfect global ordering, distributed syst
 
 # 12. Server Reconciliation
 - Authoritative corrections
+
+As discussed in [10. Server Authority](#10-server-authority), the server must ensure game state is maintained. 
+
 - Reapplication of inputs
+
+
+
 - Error handling (general)
 ---
 
@@ -192,6 +209,8 @@ i.e., tick is just a unit, tick rate is just unit rate, fixed timestep is how mu
 
 TODO::
 - server: fixed timestep
+
+
 - Client: variable render rate
 - Why interpolation exists
 - Why jitter is visible without buffering 
@@ -272,18 +291,24 @@ TODO:: Discuss thread-based v process-based v event-based. Can also put a short 
 
 - Clock drift & skew (1–2 paragraphs)
 
+  A notable challenge of distributed systems is clients with different clocks. Computers use quartz clocks, which can lead to clock drift over time. Clock drift is defined as the difference between a client's clock rate and a perfect clock rate.
+
+  Clock skew is another notable concept
+
 - Mention of synchronization (NTP/GPS) without details
 
 As a result, physical clocks cannot provide a reliable global ordering of events. For this reason, distributed systems often rely on logical notions of time instead.
 
 **14.2 Logical Time and Event Ordering in TF2**
 - One paragraph defining logical time (informal)
+
+Logical clocks are a unique mechanic found in distributed systems. Logical clocks ensure ordering is maintained between clients. 
+
 - One paragraph mapping to TF2:
   - Server ticks
   - Command numbers
   - Snapshot sequence IDs
 - One sentence acknowledging Lamport/vector clocks without diving in
-
 While distributed systems research formalizes logical time through mechanisms such as Lamport and vector clocks, Team Fortress 2 employs a simplified model based on server-enforced tick ordering, which is sufficient for its centralized architecture.
 
 ## 15. Quality of Service (QoS) / Network Prioritization
